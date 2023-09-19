@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className=" py-4 md:py-0 lg:h-[300px] w-full bg-hero">
+    <section className=" py-4 md:py-0 lg:h-[300px] w-full bg-hero rounded-b-3xl">
       <div className="px-4 max-w-[1036px] mx-auto flex items-center flex-col md:flex-row">
         <div className="flex-1">
           <h1 className="text-5xl font-semibold text-center md:text-start leading-none  text-[#3b3d48]">
