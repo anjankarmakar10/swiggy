@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import ProfileAvatar from "./ProfileAvatar";
-import SearchBox from "./SearchInput/SearchBox";
+import SearchBox from "./SearchBox";
 import SearchLocation from "./SearchLocation";
 
 const Navbar = () => {

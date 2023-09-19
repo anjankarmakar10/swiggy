@@ -1,7 +1,7 @@
 "use client";
 
 import useAutoSearch from "@/app/hooks/useAutoSearch";
-import { log } from "console";
+
 import { ChangeEvent, useCallback, useState } from "react";
 
 const SearchBox = () => {
