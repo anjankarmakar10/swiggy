@@ -3,11 +3,11 @@ import Link from "next/link";
 import categories from "../data/categories";
 
 import Image from "next/image";
-import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { useRef } from "react";
+import useSliderSwipe from "../hooks/useSliderSwipe";
 const CategoryList = () => {
-  const swiperRef = useRef<SwiperRef>(null);
+  const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
 
   return (
     <section className="max-w-[1036px] mx-auto px-4 pt-8">
@@ -16,7 +16,7 @@ const CategoryList = () => {
         <div>
           <div className="flex items-center gap-3 ">
             <div
-              onClick={() => swiperRef.current?.swiper?.slidePrev()}
+              onClick={slidePrev}
               className="h-[34px] w-[33px] rounded-full grid place-content-center bg-[#e2e2e7] cursor-pointer"
             >
               <svg
@@ -34,7 +34,7 @@ const CategoryList = () => {
               </svg>
             </div>
             <div
-              onClick={() => swiperRef.current?.swiper?.slideNext()}
+              onClick={slideNext}
               className="h-[34px] w-[33px] rounded-full grid place-content-center bg-[#e2e2e7] cursor-pointer"
             >
               <svg
