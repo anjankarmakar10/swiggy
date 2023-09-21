@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="px-4 max-w-[1036px] mx-auto flex items-center flex-col md:flex-row">
         <div className="flex-1">
           <h1 className="text-5xl font-semibold text-center md:text-start leading-none  text-[#3b3d48]">
-            Explore Your <br /> Best Recipe <br /> Form Us
+            Explore Your <br /> Best Recipe
           </h1>
           <div className="flex justify-center md:justify-start pt-4 md:pt-0">
             <svg

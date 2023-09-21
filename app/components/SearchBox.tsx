@@ -20,7 +20,7 @@ const SearchBox = () => {
     if (query === "") return;
 
     if (keyCode === 13) {
-      setQuery(data[activeIndex].title);
+      setQuery(data[activeIndex]?.title);
     }
 
     if (data.length === 0) return;
