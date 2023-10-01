@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import useSliderSwipe from "../hooks/useSliderSwipe";
 import SliderArrows from "./SliderArrows";
+import usePopularRecipes from "../hooks/usePopularRecipes";
+
 const CategoryList = () => {
   const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
 
@@ -18,7 +20,7 @@ const CategoryList = () => {
           <SliderArrows slideNext={slideNext} slidePrev={slidePrev} />
         </div>
       </header>
-      <div>
+      <div className="swipe">
         <Swiper
           ref={swiperRef}
           slidesPerView={2}
@@ -42,7 +44,6 @@ const CategoryList = () => {
             <SwiperSlide key={category.id}>
               <Link href={`/search/${category.title}`}>
                 <Image
-                  className="hover:-translate-y-3 transition-all"
                   src={category.image}
                   height={180}
                   width={144}

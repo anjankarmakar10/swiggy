@@ -19,7 +19,7 @@ const Hero = () => {
               <path
                 d="M1 5.25939C27 -0.240624 53.5 -0.2406 77 4.25939"
                 stroke="#F15700"
-                stroke-width="1.5"
+                strokeWidth="1.5"
               ></path>
             </svg>
           </div>

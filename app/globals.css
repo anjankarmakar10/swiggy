@@ -10,13 +10,13 @@ body {
   color: #323232;
 }
 
-.swiper-slide,
-.swiper-wrapper,
-.swiper {
+.swipe .swiper-slide,
+.swipe .swiper-wrapper,
+.swipe .swiper {
   height: 180px;
 }
 
-.swiper-slide {
+.swipe .swiper-slide {
   width: 144px !important;
   height: 180px;
 }
