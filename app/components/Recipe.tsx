@@ -54,7 +54,7 @@ const Recipe = ({ recipe }: Props) => {
       <div className="p-2">
         <h3 className="text-lg font-bold line-clamp-1">{recipe.title}</h3>
 
-        <p className="text-[#02060d91] font-normal leading-snug">
+        <p className="text-[#02060d91] font-normal leading-snug line-clamp-2">
           {recipe.diets.join(", ")}
         </p>
       </div>
