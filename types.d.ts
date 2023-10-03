@@ -61,3 +61,9 @@ type Recipe = {
   originalId: null;
   spoonacularSourceUrl: string;
 };
+
+type SearchRecipe = {
+  id: number;
+  title: string;
+  image: string;
+};

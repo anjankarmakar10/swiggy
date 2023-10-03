@@ -21,6 +21,8 @@ const SearchBox = () => {
 
     if (keyCode === 13) {
       setQuery(data[activeIndex]?.title);
+
+      setQuery("");
     }
 
     if (data.length === 0) return;

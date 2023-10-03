@@ -8,7 +8,6 @@ const PopularRecipes = () => {
   const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
 
   const { recipes } = usePopularRecipes();
-  console.log(recipes);
 
   return (
     <section className="max-w-[1036px] mx-auto px-4 ">

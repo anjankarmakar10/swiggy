@@ -17,11 +17,6 @@ const DiscoverRecipes = () => {
           <Recipe key={recipe.id} recipe={recipe} />
         ))}
       </div>
-      <div className="max-w-xs mx-auto">
-        <button className="p-4 border rounded-xl font-bold text-base w-full">
-          Show more
-        </button>
-      </div>
     </section>
   );
 };
