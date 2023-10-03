@@ -6,7 +6,7 @@ const useSearchRecipes = (query: string) => {
   const getData = async (signal: AbortSignal, query: string) => {
     try {
       const res = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${query}&&number=20&apiKey=a76824713af44b9196b97ffd944fb3eb`,
+        `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=20&apiKey=a76824713af44b9196b97ffd944fb3eb`,
         { signal }
       );
 

@@ -2,6 +2,7 @@
 
 import SearchRecipe from "@/app/components/SearchRecipe";
 import useSearchRecipes from "@/app/hooks/useSearchRecipes";
+import Link from "next/link";
 
 interface Params {
   params: {
@@ -19,7 +20,9 @@ const page = ({ params: { query } }: Params) => {
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
         {recipes?.map((recipe) => (
-          <SearchRecipe key={recipe.id} recipe={recipe} />
+          <Link href={`/recipe/${recipe.id}`} key={recipe.id}>
+            <SearchRecipe recipe={recipe} />
+          </Link>
         ))}
       </div>
     </section>
