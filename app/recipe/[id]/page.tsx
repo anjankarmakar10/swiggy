@@ -6,7 +6,7 @@ interface Params {
   };
 }
 
-const Recipe = async ({ params: { id } }: Params) => {
+const RecipeDetails = async ({ params: { id } }: Params) => {
   const recipe = await getRecipeDetails(id);
 
   return (
@@ -82,7 +82,7 @@ const Recipe = async ({ params: { id } }: Params) => {
                 </div>
 
                 <div className=" pl-3 p-3 text-text1 flex flex-col justify-center">
-                  <p className="text-sm mb-2 font-medium ">
+                  <p className="text-sm mb-2 font-medium text-center">
                     {ingredient.original}
                   </p>
                 </div>
@@ -98,11 +98,12 @@ const Recipe = async ({ params: { id } }: Params) => {
           </ol>
 
           <p className="text-gray-700 mb-4">
-            Serve the cake with your favorite frosting or enjoy it plain!
+            Serve the recipe with your favorite frosting or enjoy it plain!
           </p>
         </div>
       </div>
     </section>
   );
 };
-export default Recipe;
+
+export default RecipeDetails;

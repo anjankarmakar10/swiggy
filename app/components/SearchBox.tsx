@@ -1,6 +1,7 @@
 "use client";
 
 import useAutoSearch from "@/app/hooks/useAutoSearch";
+import { useRouter } from "next/navigation";
 
 import { ChangeEvent, useCallback, useState } from "react";
 
@@ -9,6 +10,8 @@ const SearchBox = () => {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
 
   const { data } = useAutoSearch(query);
+
+  const router = useRouter();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -20,8 +23,7 @@ const SearchBox = () => {
     if (query === "") return;
 
     if (keyCode === 13) {
-      setQuery(data[activeIndex]?.title);
-
+      router.push(`/search/${query}`);
       setQuery("");
     }
 
@@ -92,7 +94,10 @@ const SearchBox = () => {
         <div className="absolute z-10 w-full bg-white shadow-input  rounded-xl p-4 flex flex-col ">
           {data?.map((item, index) => (
             <div
-              onClick={() => setQuery(item.title)}
+              onClick={() => {
+                router.push(`/search/${item.title}`);
+                setQuery("");
+              }}
               key={item.id}
               className={`${
                 index === activeIndex ? "bg-blue-400" : ""
