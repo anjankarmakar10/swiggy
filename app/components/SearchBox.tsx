@@ -3,7 +3,7 @@
 import useAutoSearch from "@/app/hooks/useAutoSearch";
 import { useRouter } from "next/navigation";
 
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const SearchBox = () => {
   const [query, setQuery] = useState("");
@@ -18,13 +18,14 @@ const SearchBox = () => {
     setQuery(value);
   };
 
-  const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyUp = (event: any) => {
     const keyCode = event.keyCode;
     if (query === "") return;
 
     if (keyCode === 13) {
       router.push(`/search/${query}`);
       setQuery("");
+      setActiveIndex(-1);
     }
 
     if (data.length === 0) return;

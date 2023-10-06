@@ -1,6 +1,7 @@
 "use client";
 
 import SearchRecipe from "@/app/components/SearchRecipe";
+import Skeleton from "@/app/components/Skeleton";
 import useSearchRecipes from "@/app/hooks/useSearchRecipes";
 import Link from "next/link";
 
@@ -19,11 +20,15 @@ const page = ({ params: { query } }: Params) => {
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 pb-8">
-        {recipes?.map((recipe) => (
-          <Link href={`/recipe/${recipe.id}`} key={recipe.id}>
-            <SearchRecipe recipe={recipe} />
-          </Link>
-        ))}
+        {recipes
+          ? recipes?.map((recipe) => (
+              <Link href={`/recipe/${recipe.id}`} key={recipe.id}>
+                <SearchRecipe recipe={recipe} />
+              </Link>
+            ))
+          : Array(8)
+              .fill("@")
+              .map((_, i) => <Skeleton key={i} />)}
       </div>
     </section>
   );

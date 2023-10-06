@@ -2,6 +2,7 @@
 
 import useRecipes from "../hooks/useRecipes";
 import Recipe from "./Recipe";
+import Skeleton from "./Skeleton";
 
 const DiscoverRecipes = () => {
   const { recipes } = useRecipes();
@@ -13,9 +14,11 @@ const DiscoverRecipes = () => {
       </header>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 pb-8">
-        {recipes?.map((recipe) => (
-          <Recipe key={recipe.id} recipe={recipe} />
-        ))}
+        {recipes
+          ? recipes?.map((recipe) => <Recipe key={recipe.id} recipe={recipe} />)
+          : Array(10)
+              .fill("@")
+              .map((_, i) => <Skeleton key={i} />)}
       </div>
     </section>
   );
