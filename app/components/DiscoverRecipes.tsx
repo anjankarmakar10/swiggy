@@ -1,7 +1,7 @@
 "use client";
 
 import useRecipes from "../hooks/useRecipes";
-import Recipe from "./Recipe";
+import RecipeCard from "./RecipeCard";
 import Skeleton from "./Skeleton";
 
 const DiscoverRecipes = () => {
@@ -13,9 +13,11 @@ const DiscoverRecipes = () => {
         <h2 className="font-bold text-2xl">Discover new restaurants </h2>
       </header>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 pb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  pb-8">
         {recipes
-          ? recipes?.map((recipe) => <Recipe key={recipe.id} recipe={recipe} />)
+          ? recipes?.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))
           : Array(10)
               .fill("@")
               .map((_, i) => <Skeleton key={i} />)}

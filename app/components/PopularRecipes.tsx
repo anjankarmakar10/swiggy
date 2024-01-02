@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import usePopularRecipes from "../hooks/usePopularRecipes";
 import useSliderSwipe from "../hooks/useSliderSwipe";
-import Recipe from "./Recipe";
+import Recipe from "./RecipeCard";
 import SliderArrows from "./SliderArrows";
 import Skeleton from "./Skeleton";
 const PopularRecipes = () => {

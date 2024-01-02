@@ -42,7 +42,13 @@ const CategoryList = () => {
         >
           {categories.map((category) => (
             <SwiperSlide key={category.id}>
-              <Link href={`/search/${category.title}`}>
+              {/* <Link href={`/search/${category.title}`}> */}
+              <Link
+                href={{
+                  pathname: `/search/${category.title}`,
+                  query: { from: "category" },
+                }}
+              >
                 <Image
                   src={category.image}
                   height={180}
