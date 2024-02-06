@@ -1,6 +1,6 @@
-const debounce = (fun, delay) => {
-  let time;
-  return (...args) => {
+const debounce = (fun: any, delay: number) => {
+  let time: any;
+  return (...args: any) => {
     let self = this;
     if (time) clearTimeout(time);
     time = setTimeout(() => {

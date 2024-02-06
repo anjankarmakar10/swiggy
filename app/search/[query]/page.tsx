@@ -14,7 +14,7 @@ interface Params {
   };
 }
 const page = ({ params, searchParams }: Params) => {
-  const isFromCategory = searchParams?.from;
+  const isFromCategory = searchParams?.form;
   const { recipes } = useSearchRecipes(params?.query);
 
   return (

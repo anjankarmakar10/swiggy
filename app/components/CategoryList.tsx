@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import useSliderSwipe from "../hooks/useSliderSwipe";
 import SliderArrows from "./SliderArrows";
-import usePopularRecipes from "../hooks/usePopularRecipes";
 
 const CategoryList = () => {
   const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
