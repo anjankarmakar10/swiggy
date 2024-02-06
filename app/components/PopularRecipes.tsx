@@ -9,7 +9,8 @@ import useRecipes from "../hooks/useRecipes";
 const PopularRecipes = () => {
   const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
 
-  const { recipes, isLoading, isError } = useRecipes({ isPopular: true });
+  const { data, isLoading, isError } = useRecipes();
+  const recipes = data?.recipes?.filter((recipe) => recipe.veryHealthy);
 
   return (
     <section className="max-w-[1036px] mx-auto px-4 ">
