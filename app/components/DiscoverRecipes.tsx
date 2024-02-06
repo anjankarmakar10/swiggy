@@ -10,7 +10,7 @@ const DiscoverRecipes = () => {
   return (
     <section className="max-w-[1036px] mx-auto px-4 ">
       <header className="flex items-center justify-between mb-4">
-        <h2 className="font-bold text-2xl">Discover new restaurants </h2>
+        <h2 className="font-bold text-2xl">Discover new recipes </h2>
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4  pb-8">

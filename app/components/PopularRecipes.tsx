@@ -13,7 +13,7 @@ const PopularRecipes = () => {
   return (
     <section className="max-w-[1036px] mx-auto px-4 ">
       <header className="flex items-center justify-between mb-4">
-        <h2 className="font-bold text-2xl">Popular restaurants </h2>
+        <h2 className="font-bold text-2xl">Popular recipes </h2>
         <div>
           <SliderArrows slideNext={slideNext} slidePrev={slidePrev} />
         </div>

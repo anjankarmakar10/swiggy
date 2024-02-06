@@ -52,7 +52,7 @@ const RecipeCard = ({ recipe }: Props) => {
       <CardContent className="p-4 pt-0">
         <p className="line-clamp-2">{recipe.diets.join(", ")}</p>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-0 ">
         <Link className="w-full" href={`/recipe/${recipe.id}`}>
           <Button className="w-full">Veiw Recipe</Button>
         </Link>

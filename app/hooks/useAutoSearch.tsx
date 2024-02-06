@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import AutoSearchData from "../models/AutoSearchData";
 import debounce from "../lib/debounce";
+import { API_KEY, BASE_URL } from "@/lib/constants";
 
 const useAutoSearch = (query: string) => {
   const [data, setData] = useState<AutoSearchData[] | []>([]);
@@ -13,7 +14,7 @@ const useAutoSearch = (query: string) => {
       try {
         setIsLoading(true);
         const res = await fetch(
-          `https://api.spoonacular.com/recipes/autocomplete?number=10&query=${query}&apiKey=a76824713af44b9196b97ffd944fb3eb`,
+          `${BASE_URL}/recipes/autocomplete?number=10&query=${query}&apiKey=${API_KEY}`,
           { signal }
         );
         const data: AutoSearchData[] = await res.json();

@@ -2,7 +2,6 @@
 
 import useAutoSearch from "@/app/hooks/useAutoSearch";
 import { useRouter } from "next/navigation";
-
 import { ChangeEvent, useState } from "react";
 
 const SearchBox = () => {
@@ -69,7 +68,7 @@ const SearchBox = () => {
           onChange={handleChange}
           className="w-full bg-transparent outline-0"
           placeholder="Search for Dishes and Restaurants"
-          type="text"
+          type="search"
           value={query}
         />
 
@@ -91,6 +90,7 @@ const SearchBox = () => {
           </svg>
         </div>
       </article>
+
       {data.length > 0 && (
         <div className="absolute z-10 w-full bg-white shadow-input  rounded-xl p-4 flex flex-col ">
           {data?.map((item, index) => (

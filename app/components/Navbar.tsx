@@ -22,8 +22,10 @@ const Navbar = () => {
           <ProfileAvatar />
         </div>
       </nav>
-      <div className="max-w-[1036px] mx-auto py-2 flex flex-col gap-2 lg:hidden">
-        <SearchLocation />
+      <div className="max-w-[1036px] mx-auto py-2 flex flex-col md:flex-row gap-2 lg:hidden">
+        <div className="hidden md:block">
+          <SearchLocation />
+        </div>
         <SearchBox />
       </div>
     </header>

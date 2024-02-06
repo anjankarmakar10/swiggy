@@ -1,3 +1,4 @@
+import { API_KEY, BASE_URL } from "@/lib/constants";
 import { useEffect, useState } from "react";
 
 const usePopularRecipes = () => {
@@ -6,7 +7,7 @@ const usePopularRecipes = () => {
   const getData = async (signal: AbortSignal) => {
     try {
       const res = await fetch(
-        `https://api.spoonacular.com/recipes/random?number=10&tags=vegetarian,chicken&apiKey=a76824713af44b9196b97ffd944fb3eb`,
+        `${BASE_URL}/recipes/random?number=10&tags=vegetarian,chicken&apiKey=${API_KEY}`,
         { signal }
       );
 
