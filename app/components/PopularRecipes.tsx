@@ -1,14 +1,15 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import usePopularRecipes from "../hooks/usePopularRecipes";
+
 import useSliderSwipe from "../hooks/useSliderSwipe";
 import Recipe from "./RecipeCard";
 import SliderArrows from "./SliderArrows";
 import Skeleton from "./Skeleton";
+import useRecipes from "../hooks/useRecipes";
 const PopularRecipes = () => {
   const { swiperRef, slideNext, slidePrev } = useSliderSwipe();
 
-  const { recipes } = usePopularRecipes();
+  const { recipes, isLoading, isError } = useRecipes({ isPopular: true });
 
   return (
     <section className="max-w-[1036px] mx-auto px-4 ">
@@ -19,33 +20,7 @@ const PopularRecipes = () => {
         </div>
       </header>
       <div>
-        {recipes?.length > 0 ? (
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={2}
-            spaceBetween={30}
-            breakpoints={{
-              480: {
-                width: 480,
-                slidesPerView: 1,
-              },
-              768: {
-                width: 768,
-                slidesPerView: 2,
-              },
-              1024: {
-                width: 1024,
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {recipes?.map((recipe) => (
-              <SwiperSlide key={recipe.id}>
-                <Recipe recipe={recipe} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        ) : (
+        {isLoading && (
           <div className="flex gap-4 md:gap-8">
             <div className="w-full">
               <Skeleton />
@@ -58,6 +33,32 @@ const PopularRecipes = () => {
             </div>
           </div>
         )}
+
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={2}
+          spaceBetween={30}
+          breakpoints={{
+            480: {
+              width: 480,
+              slidesPerView: 1,
+            },
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+            1024: {
+              width: 1024,
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {recipes?.map((recipe) => (
+            <SwiperSlide key={recipe.id}>
+              <Recipe recipe={recipe} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
